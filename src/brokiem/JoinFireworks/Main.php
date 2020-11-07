@@ -5,12 +5,13 @@ namespace brokiem\JoinFireworks;
 use BlockHorizons\Fireworks\item\Fireworks;
 use BlockHorizons\Fireworks\entity\FireworksRocket;
 
+use pocketmine\Player;
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;
 use pocketmine\item\ItemFactory;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\Player;
+use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase implements Listener {
