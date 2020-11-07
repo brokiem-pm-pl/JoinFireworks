@@ -1,4 +1,5 @@
 # JoinFireworks
-Spawn fireworks every player joined the server (PM Plugin)
+Spawn random fireworks every player who joins the server (PM Plugin)
 
-THIS PLUGIN IS IN DEVELOPMENT
+# Note
+If you use the TeaSpoon plugin, this plugin will not work because TeaSpoon and this plugin register the same fireworks entity.
