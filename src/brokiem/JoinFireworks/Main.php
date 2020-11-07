@@ -22,7 +22,7 @@ class Main extends PluginBase implements Listener {
 			$this->getLogger()->error("Failed to register FireworksRocket entity with savename 'FireworksRocket'");
 		}
   	$this->getServer()->getPluginManager()->registerEvents($this, $this);
-  }
+  	}
 
 	public function getFireworksType() {
 		$type_array = [
@@ -60,14 +60,16 @@ class Main extends PluginBase implements Listener {
 		return $color_array[array_rand($color_array)];
 	}
 
-  public function onJoin(PlayerJoinEvent $event) {
-    $fw = ItemFactory::get(Item::FIREWORKS);
-  	$fw->addExplosion($this->getFireworksType(), $this->getFireworksColor(), "", true, true);
-    $fw->setFlightDuration(mt_rand(0.5, 2));
-    $vector3 = $this->getServer()->getDefaultLevel()->getSpawnLocation()->add(0, 1, 0);
-    $entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
-   	if ($entity instanceof FireworksRocket) {
-      $entity->spawnToAll();
-    }
+  	public function onJoin(PlayerJoinEvent $event) {
+  		$fw = ItemFactory::get(Item::FIREWORKS);
+   		$fw->addExplosion($this->getFireworksType(), $this->getFireworksColor(), "", true, true);
+    		$fw->setFlightDuration(mt_rand(0.5, 2));
+		$level = $this->getServer()->getDefaultLevel();
+   		$vector3 = $level->getSpawnLocation()->add(0, 1, 0);
+		$nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
+   		$entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
+   		if ($entity instanceof FireworksRocket) {
+   			$entity->spawnToAll();
+    		}
 	}
 }
