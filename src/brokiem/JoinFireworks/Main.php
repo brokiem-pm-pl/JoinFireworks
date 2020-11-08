@@ -70,7 +70,9 @@ class Main extends PluginBase implements Listener {
 		$nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
    		$entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
    		if ($entity instanceof FireworksRocket) {
-   			$entity->spawnToAll();
+			if($event->getPlayer()->hasPermission("brokiem.join.firework") {
+   				$entity->spawnTo($event->getPlayer());
+			}
     		}
 	}
 }
