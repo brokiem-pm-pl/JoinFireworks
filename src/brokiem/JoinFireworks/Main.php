@@ -41,7 +41,6 @@ class Main extends PluginBase implements Listener {
 		$color_array = [
 			Fireworks::COLOR_BLACK,
 			Fireworks::COLOR_RED,
-			Fireworks::TYPE_STAR,
 			Fireworks::COLOR_DARK_GREEN,
 			Fireworks::COLOR_BROWN,
 			Fireworks::COLOR_BLUE,
