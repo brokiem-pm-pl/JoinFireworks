@@ -25,7 +25,7 @@ class Main extends PluginBase implements Listener {
   	$this->getServer()->getPluginManager()->registerEvents($this, $this);
   	}
 
-	public function getFireworksColor() {
+	public function getFireworksColor(): string {
 		$color_array = [
 			Fireworks::COLOR_BLACK,
 			Fireworks::COLOR_RED,
