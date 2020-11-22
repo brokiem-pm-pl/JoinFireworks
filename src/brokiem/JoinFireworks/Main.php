@@ -18,24 +18,12 @@ class Main extends PluginBase implements Listener {
 
 	public function onEnable() {
 		ItemFactory::registerItem(new Fireworks());
-		Item::initCreativeItems(); //will load firework rockets from pocketmine's resources folder
+		Item::initCreativeItems();
 		if(!Entity::registerEntity(FireworksRocket::class, false, ["FireworksRocket"])) {
 			$this->getLogger()->error("Failed to register FireworksRocket entity with savename 'FireworksRocket'");
 		}
   	$this->getServer()->getPluginManager()->registerEvents($this, $this);
   	}
-
-	public function getFireworksType() {
-		$type_array = [
-			Fireworks::TYPE_SMALL_SPHERE,
-			Fireworks::TYPE_HUGE_SPHERE,
-			Fireworks::TYPE_STAR,
-			Fireworks::TYPE_CREEPER_HEAD,
-			Fireworks::TYPE_BURST
-		];
-
-		return $type_array[array_rand($type_array)];
-	}
 
 	public function getFireworksColor() {
 		$color_array = [
@@ -62,8 +50,8 @@ class Main extends PluginBase implements Listener {
 
   	public function onJoin(PlayerJoinEvent $event) {
   		$fw = ItemFactory::get(Item::FIREWORKS);
-   		$fw->addExplosion($this->getFireworksType(), $this->getFireworksColor(), "", true, true);
-    		$fw->setFlightDuration(mt_rand(0.5, 2));
+   		$fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true);
+    		$fw->setFlightDuration(mt_rand(1, 2));
 		$level = $this->getServer()->getDefaultLevel();
    		$vector3 = $level->getSpawnLocation()->add(0, 1, 0);
 		$nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
