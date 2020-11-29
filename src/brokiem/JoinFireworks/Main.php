@@ -20,9 +20,9 @@ class Main extends PluginBase implements Listener {
 		ItemFactory::registerItem(new Fireworks());
 		Item::initCreativeItems();
 		if(!Entity::registerEntity(FireworksRocket::class, false, ["FireworksRocket"])) {
-			$this->getLogger()->error("Failed to register FireworksRocket entity with savename 'FireworksRocket'");
+			$this->getLogger()->error("Failed to register FireworksRocket entity with savename 'FireworksRocket'"); //register Fireworks
 		}
-  	$this->getServer()->getPluginManager()->registerEvents($this, $this);
+  		$this->getServer()->getPluginManager()->registerEvents($this, $this);
   	}
 
 	public function getFireworksColor(): string {
@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener {
 		$nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
    		$entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
    		if ($entity instanceof FireworksRocket) {
-			if($event->getPlayer()->hasPermission("brokiem.join.firework")) {
+			if($event->getPlayer()->hasPermission("join.fireworks.use")) {
    				$entity->spawnTo($event->getPlayer());
 			}
     		}
