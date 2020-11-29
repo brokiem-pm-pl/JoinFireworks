@@ -2,8 +2,7 @@
 Spawn random fireworks every player who joins the server (PM Plugin)
 
 ## Permission
-Permission to spawn fireworks when a player joins the server is 
-> brokiem.join.firework 
+Permission to spawn fireworks when a player joins the server is ```join.fireworks.use```
 
 ## Credit
 This plugin using fireworks entity from [BlockHorizons/Fireworks](https://github.com/BlockHorizons/Fireworks/)
