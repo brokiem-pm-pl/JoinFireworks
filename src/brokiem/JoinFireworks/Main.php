@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener {
 		
    		if ($entity instanceof FireworksRocket) {
 			if($event->getPlayer()->hasPermission("join.fireworks.use")) {
-   				$entity->spawnToAll());
+   				$entity->spawnToAll();
 			}
     		}
 	}
