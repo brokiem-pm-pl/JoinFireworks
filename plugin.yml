@@ -3,3 +3,7 @@ version: 1.0.4
 main: brokiem\JoinFireworks\Main
 api: 3.13.0
 author: brokiem
+
+permissions:
+  join.fireworks.use:
+    default: false

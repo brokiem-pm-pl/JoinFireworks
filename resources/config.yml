@@ -1,0 +1,9 @@
+---
+# JoinFireworks Configuration
+
+# Fireworks flight duration in seconds (Default: 2)
+flight-duration: 2
+
+# Fireworks spawn delay after player joins in seconds (Default: 2)
+spawn-delay: 2
+...

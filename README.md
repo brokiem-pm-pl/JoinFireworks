@@ -1,11 +1,11 @@
-# JoinFireworks
-Spawn random fireworks every player who joins the server (PM Plugin)
+<h1>JoinFireworks<img src="https://github.com/brokiem/JoinFireworks/blob/master/assets/logo.png" height="64" width="64" align="left" alt=""></h1><br>
+
+[![License](https://img.shields.io/github/license/brokiem/JoinFireworks)](https://github.com/brokiem/JoinFireworks)
+[![Star](https://img.shields.io/github/stars/brokiem/JoinFireworks)](https://github.com/brokiem/JoinFireworks/stargazers) <br>
+
+Spawn random fireworks every player who joins the server
 
 ## Permission
-Permission to spawn fireworks when a player joins the server is ```join.fireworks.use```
-
-## Credit
-This plugin using fireworks entity from [BlockHorizons/Fireworks](https://github.com/BlockHorizons/Fireworks/)
-
-## Note
-If you use the TeaSpoon plugin, this plugin will not work because TeaSpoon and this plugin register the same fireworks entity.
+| Permission | Description | Default |
+| --- | --- | --- |
+| ```join.fireworks.use``` | allow fireworks spawn when player joins | false |
