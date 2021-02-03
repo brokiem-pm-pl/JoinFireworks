@@ -4,6 +4,9 @@ main: brokiem\JoinFireworks\Main
 api: 3.13.0
 author: brokiem
 
+depend:
+  - "Fireworks"
+
 permissions:
   join.fireworks.use:
     default: false
