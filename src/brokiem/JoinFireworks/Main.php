@@ -88,7 +88,6 @@ class Main extends PluginBase implements Listener
 
                     if ($entity instanceof FireworksRocket) {
                         $entity->spawnToAll();
-
                     }
                 }
             }), $this->getConfig()->get("spawn-delay", 2) * 20);
