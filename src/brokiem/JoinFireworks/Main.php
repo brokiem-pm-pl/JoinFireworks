@@ -74,23 +74,24 @@ class Main extends PluginBase implements Listener
     {
         $player = $event->getPlayer();
 
-        $this->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($player): void {
-            $fw = ItemFactory::get(Item::FIREWORKS);
-            if ($fw instanceof Fireworks) {
-                $fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true);
-                $fw->setFlightDuration($this->getConfig()->get("flight-duration", 2));
+        if ($player->hasPermission("join.fireworks.use")) {
+            $this->getScheduler()->scheduleDelayedTask(new ClosureTask(function (int $currentTick) use ($player): void {
+                $fw = ItemFactory::get(Item::FIREWORKS);
+                if ($fw instanceof Fireworks) {
+                    $fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true);
+                    $fw->setFlightDuration($this->getConfig()->get("flight-duration", 2));
 
-                $level = $player->getLevelNonNull();
-                $vector3 = $level->getSpawnLocation()->add(0.5, 1, 0.5);
-                $nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
-                $entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
+                    $level = $player->getLevelNonNull();
+                    $vector3 = $level->getSpawnLocation()->add(0.5, 1, 0.5);
+                    $nbt = FireworksRocket::createBaseNBT($vector3, new Vector3(0.001, 0.05, 0.001), lcg_value() * 360, 90);
+                    $entity = FireworksRocket::createEntity("FireworksRocket", $level, $nbt, $fw);
 
-                if ($entity instanceof FireworksRocket) {
-                    if ($player->hasPermission("join.fireworks.use")) {
+                    if ($entity instanceof FireworksRocket) {
                         $entity->spawnToAll();
+
                     }
                 }
-            }
-        }), $this->getConfig()->get("spawn-delay", 2) * 20);
+            }), $this->getConfig()->get("spawn-delay", 2) * 20);
+        }
     }
 }

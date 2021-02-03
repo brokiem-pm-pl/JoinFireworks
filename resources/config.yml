@@ -1,5 +1,7 @@
 ---
 # JoinFireworks Configuration
+# Author: brokiem (https://github.com/brokiem)
+# Source code: https://github.com/brokiem/JoinFireworks
 
 # Fireworks flight duration in seconds (Default: 2)
 flight-duration: 2
