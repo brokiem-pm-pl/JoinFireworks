@@ -5,4 +5,5 @@ branches:
 projects:
   JoinFireworks:
     path: ""
+    icon: "/assets/logo.png"
 ...
