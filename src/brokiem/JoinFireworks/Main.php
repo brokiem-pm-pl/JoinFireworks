@@ -78,7 +78,7 @@ class Main extends PluginBase implements Listener
             $fw = ItemFactory::get(Item::FIREWORKS);
             if ($fw instanceof Fireworks) {
                 $fw->addExplosion(mt_rand(0, 4), $this->getFireworksColor(), "", true, true);
-                $fw->setFlightDuration($this->getConfig()->get("flight-duration"));
+                $fw->setFlightDuration($this->getConfig()->get("flight-duration", 2));
 
                 $level = $player->getLevelNonNull();
                 $vector3 = $level->getSpawnLocation()->add(0.5, 1, 0.5);
@@ -91,6 +91,6 @@ class Main extends PluginBase implements Listener
                     }
                 }
             }
-        }), $this->getConfig()->get("spawn-delay") * 20);
+        }), $this->getConfig()->get("spawn-delay", 2) * 20);
     }
 }

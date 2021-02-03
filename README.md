@@ -8,7 +8,7 @@ Spawn random fireworks every player who joins the server
 ## Permission
 | Permission | Description | Default |
 | --- | --- | --- |
-| ```join.fireworks.use``` | allow fireworks spawn when player joins | false |
+| ```join.fireworks.use``` | Allow fireworks spawn when player joins | false |
 
 ## Depend
 This plugin requires the Fireworks' plugin from Block Horizons which can be downloaded [here](https://poggit.pmmp.io/r/111445/Fireworks_dev-7.phar)
