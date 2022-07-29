@@ -1,12 +1,12 @@
 name: JoinFireworks
-version: 1.0.4
+version: 2.0.0
 main: brokiem\JoinFireworks\Main
-api: 3.13.0
+api: 4.0.0
 author: brokiem
 
 depend:
   - "Fireworks"
 
 permissions:
-  join.fireworks.use:
+  joinfireworks.use:
     default: false
