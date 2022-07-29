@@ -9,4 +9,4 @@ depend:
 
 permissions:
   joinfireworks.use:
-    default: false
+    default: true
